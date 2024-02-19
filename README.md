@@ -1,5 +1,5 @@
 # JASK-Server
-JASK - Just Another Space Game Server
+JASK - Just Another Space Game - Server
 
 This is the server code for this game.
 
