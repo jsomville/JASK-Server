@@ -1,14 +1,16 @@
-from fastapi import FastAPI
+from fastapi import Depends, FastAPI
+from sqlalchemy.orm import Session
 
-from .bank import bank_routes
+#Sub routes modules
+from api.bank import bank_routes
+from api.idp import idp_routes
+from api.characters import characters_routes
+from api.market import market_routes
+from api.world import world_routes
 
-from .idp import idp_routes
-
-from .characters import characters_routes
-
-from .market import market_routes
-
-from .world import world_routes
+#DB, Schemas, Models and Data
+from . import schemas, models, crud, data
+from .database import engine, get_db, SessionLocal
 
 app = FastAPI(
     title="JASK",
@@ -26,9 +28,16 @@ app = FastAPI(
     },
 )
 
+models.Base.metadata.create_all(bind=engine)
+
 @app.get("/")
 def read_root():
     return {"API": "Open Space Sky API"}
+
+@app.post("/init")
+def init_db(db: Session = Depends(get_db)):
+    data.init_data(db)
+    return {"API": "DB Created with Default Values"}
 
 app.include_router(idp_routes.router)
 
