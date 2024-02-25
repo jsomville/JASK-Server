@@ -4,12 +4,15 @@ from pydantic import BaseModel
 class UserBase(BaseModel):
     email: str
 
-
-class UserCreate(UserBase):
+class UserFormCreate(UserBase):
     password: str
     firstname : str
     lastname : str
 
+class UserCreate(UserFormCreate):
+    is_active : bool
+
+    
 class User(UserBase):
     id: int
     is_active: bool
