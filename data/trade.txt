@@ -1,0 +1,84 @@
+system Sol
+	trade Clothing 282
+	trade Electronics 745
+	trade Equipment 491
+	trade Food 505
+	trade "Heavy Metals" 849
+	trade Industrial 635
+	trade "Luxury Goods" 1159
+	trade Medical 480
+	trade Metal 402
+	trade Plastic 272
+
+system "Alpha Centauri"
+	trade Clothing 262
+	trade Electronics 695
+	trade Equipment 523
+	trade Food 550
+	trade "Heavy Metals" 874
+	trade Industrial 667
+	trade "Luxury Goods" 1094
+	trade Medical 498
+	trade Metal 393
+	trade Plastic 253
+
+system Altair
+	trade Clothing 378
+	trade Electronics 806
+	trade Equipment 500
+	trade Food 472
+	trade "Heavy Metals" 781
+	trade Industrial 605
+	trade "Luxury Goods" 1048
+	trade Medical 534
+	trade Metal 335
+	trade Plastic 274
+
+system Caph
+	trade Clothing 328
+	trade Electronics 702
+	trade Equipment 440
+	trade Food 422
+	trade "Heavy Metals" 800
+	trade Industrial 682
+	trade "Luxury Goods" 1253
+	trade Medical 532
+	trade Metal 323
+	trade Plastic 299
+	
+system Denebola
+	trade Clothing 271
+	trade Electronics 673
+	trade Equipment 409
+	trade Food 568
+	trade "Heavy Metals" 856
+	trade Industrial 590
+	trade "Luxury Goods" 1201
+	trade Medical 477
+	trade Metal 489
+	trade Plastic 253
+		
+system Sirius
+	trade Clothing 186
+	trade Electronics 699
+	trade Equipment 424
+	trade Food 497
+	trade "Heavy Metals" 940
+	trade Industrial 602
+	trade "Luxury Goods" 1297
+	trade Medical 477
+	trade Metal 480
+	trade Plastic 366
+
+system Vega
+	trade Clothing 375
+	trade Electronics 797
+	trade Equipment 571
+	trade Food 414
+	trade "Heavy Metals" 858
+	trade Industrial 674
+	trade "Luxury Goods" 1058
+	trade Medical 496
+	trade Metal 356
+	trade Plastic 315
+	

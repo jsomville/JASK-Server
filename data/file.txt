@@ -1,0 +1,306 @@
+system Sol
+	pos -400 100
+	government Republic
+	link "Alpha Centauri"
+	link Altair
+	link Caph
+	link Denebola
+	link Sirius
+	link Vega
+	object
+		sprite star/g0
+		period 10
+	object
+		sprite planet/mercury
+		distance 289.647
+		period 60.0000
+	object
+		sprite planet/venus
+		distance 533.534
+		period 150.000
+	object Earth
+		sprite planet/earth
+		distance 965.669
+		period 365.250
+		object Luna
+			sprite planet/luna
+			distance 201.24
+			period 27.3
+	object Mars
+		sprite planet/mars
+		distance 1471.43
+		period 687.001
+	object Jupiter
+		sprite planet/jupiter
+		distance 3339
+		period 2348.40
+		object
+			sprite planet/io
+			distance 238.221
+			period 10.614
+		object
+			sprite planet/europa
+			distance 379.078
+			period 21.306
+		object
+			sprite planet/ganymede
+			distance 604.739
+			period 42.93
+		object
+			sprite planet/callisto
+			distance 811.717
+			period 66.76
+	object
+		sprite planet/saturn
+		distance 5562
+		period 5048.87
+		object
+			sprite planet/tethys
+			distance 590
+			period 1.9
+		object
+			sprite planet/rhea
+			distance 791
+			period 4.5
+		object
+			sprite planet/titan
+			distance 1222
+			period 16
+	object
+		sprite planet/uranus
+		distance 10373
+		period 12858.9
+		object
+			sprite planet/miranda
+			distance 195
+			period 1.4
+		object
+			sprite planet/oberon
+			distance 584
+			period 13
+	object
+		sprite planet/neptune
+		distance 15730
+		period 24012.7
+
+system "Alpha Centauri"
+	pos -429 125
+	government Republic
+	link Sol
+	object
+		sprite star/g3
+		distance 38.238
+		period 10.3766
+		offset 180
+	object
+		sprite star/k0
+		distance 54.6257
+		period 10.3766
+	object
+		sprite planet/desert2
+		distance 346.547
+		period 74.8048
+	object
+		sprite planet/oberon
+		distance 749.037
+		period 237.706
+	object Chiron
+		sprite planet/forest1
+		distance 976.197
+		period 353.665
+		object
+			sprite planet/rock17
+			distance 126
+			period 14.7361
+	object
+		sprite planet/rock15-b
+		distance 1718.2
+		period 825.842
+	object
+		sprite planet/gas13
+		distance 4080.61
+		period 3022.55
+
+system Altair
+	pos -357 161
+	government Republic
+	link Sol
+	link Vega
+	object
+		sprite star/g5
+		distance 45.0542
+		period 16.9115
+		offset 180
+	object
+		sprite star/k8
+		distance 76.1051
+		period 16.9115
+	object
+		sprite planet/water0
+		distance 242.318
+		period 47.8329
+	object
+		sprite planet/desert4
+		distance 468.568
+		period 128.619
+	object
+		sprite planet/rock13-b
+		distance 698.458
+		period 234.077
+	object Shiver
+		sprite planet/cloud8
+		distance 1260.95
+		period 567.799
+		object
+			sprite planet/rock17-b
+			distance 120
+			period 15
+	object
+		sprite planet/europa
+		distance 2223.95
+		period 1329.95
+
+system Caph
+	pos -295 77
+	government Syndicate
+	link Sol
+	object
+		sprite star/g3
+		period 10
+	object
+		sprite planet/desert0
+		distance 160.16
+		period 30.6437
+	object
+		sprite planet/lava3
+		distance 479.25
+		period 158.618
+	object Reunion
+		sprite planet/forest2
+		distance 885.61
+		period 398.450
+		object
+			sprite planet/mercury-b
+			distance 169
+			period 19.3731
+	object
+		sprite planet/gas6
+		distance 1666.37
+		period 1028.41
+		object "Kraken Station"
+			sprite planet/station10
+				scale 0.5
+			distance 278
+			period 10.5056
+	object
+		sprite planet/gas10
+		distance 2434.98
+		period 1816.57
+
+system Denebola
+	pos -478 70
+	government Republic
+	link Sol
+	trade Plastic 253
+	object
+		sprite star/k5
+		distance 25.2358
+		period 18.104
+		offset 180
+	object
+		sprite star/m8
+		distance 79.4463
+		period 18.104
+	object
+		sprite planet/cloud3-b
+		distance 360.519
+		period 115.706
+	object Geyser
+		sprite planet/ice2
+		distance 628.609
+		period 266.401
+	object
+		sprite planet/rock0-b
+		distance 1051.05
+		period 575.971
+	object
+		sprite planet/gas1-b
+		distance 1550.34
+		period 1031.82
+		object
+			sprite planet/oberon
+			distance 254
+			period 14.2774
+	object
+		sprite planet/io-b
+		distance 2927.23
+		period 2677.01
+		
+system Sirius
+	pos -378 44
+	government Republic
+	link Sol
+	object
+		sprite star/f5
+		distance 8.6963
+		period 12.0985
+		offset 180
+	object
+		sprite star/m8
+		distance 110.475
+		period 12.0985
+	object
+		sprite planet/lava4
+		distance 338.347
+		period 57.8785
+	object
+		sprite planet/rock6-b
+		distance 640.587
+		period 150.779
+	object
+		sprite planet/dust3
+		distance 1158.2
+		period 366.563
+	object Relic
+		sprite planet/dust4
+		distance 1807.21
+		period 714.475
+	object
+		sprite planet/tethys
+		distance 2162.3
+		period 935.078
+
+system Vega
+	pos -402 182
+	government Republic
+	link Altair
+	link Sol
+	object
+		sprite star/g0
+		distance 24.597
+		period 9.94146
+		offset 180
+	object
+		sprite star/k8
+		distance 71.7968
+		period 9.94146
+	object
+		sprite planet/rock12
+		distance 314.696
+		period 58.6425
+	object
+		sprite planet/gas12-b
+		distance 714.136
+		period 200.469
+	object Silver
+		sprite planet/cloud3
+		distance 1359.23
+		period 526.399
+		object
+			sprite planet/dust5-b
+			distance 169
+			period 22.8905
+	object
+		sprite planet/gas8
+		distance 2981.84
+		period 1710.41

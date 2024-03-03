@@ -1,14 +1,18 @@
+import datetime
 import random
 import string
 from fastapi import Depends, APIRouter, HTTPException, status
+import jwt
 from sqlalchemy.orm import Session
 
 from api.dependency import getUser
 
-from api import crud, schemas, cache
+from api import crud, schemas
 from api.database import SessionLocal, engine, get_db
 
 import hashlib
+
+TOKEN_SECRET="simpleSecret!!!"
 
 router = APIRouter(
     prefix="/idp",
@@ -21,6 +25,7 @@ def read_users(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return users    
 
 @router.post("/login/", response_model=schemas.Token)
+@router.post("/login/")
 async def login(credentials: schemas.Credentials, db: Session = Depends(get_db)):
 
     #Verify Input Parameters
@@ -48,13 +53,25 @@ async def login(credentials: schemas.Credentials, db: Session = Depends(get_db))
         )
 
     #Generate a Token
-    var =  hashlib.sha256(user.email.encode()).hexdigest()
-    token = schemas.Token(tokenStr=var)
-    
-    #Add Token To DB
-    crud.create_token(db, token, user.email)
+    # User email
+    # Character ID
+    # Expiry DateTime
+    data = dict()
+    data["email"] = user.email
+    data["character"] = 1
+    expiry =(datetime.datetime.now() + datetime.timedelta(hours=24))
+    data["expiry"] = expiry.isoformat()
+    token = jwt.encode(data, TOKEN_SECRET, algorithm="HS256")
+    print(token)
 
-    #Return a Token
+    #Add Token To DB
+    #TODO --> to cache only
+    token_hash = hashlib.md5(token.encode()).hexdigest()
+    print(token_hash)
+    crud.remove_token_by_email(db, user.email)
+    crud.create_token(db, token_hash, user.email, expiry)
+    print("HERE !!")
+
     return token
 
 
@@ -64,7 +81,6 @@ async def logout(token: schemas.Token):
     #Verify Token
     token_str = crud.get_token(token)
     
-
     #Delete Token From Cache
     crud.remove_token(token)
 
@@ -97,6 +113,7 @@ async def register(user: schemas.UserFormCreate, db: Session = Depends(get_db)):
     crud.create_activateKey(db, confirmation_key, user.email)
 
     #Send email confirmation
+    #TODO SEND MAIL
 
     return [{"Message": "User Registered"}]
 

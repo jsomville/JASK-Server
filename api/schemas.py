@@ -1,3 +1,4 @@
+from typing import Optional, List, Tuple
 from pydantic import BaseModel
 #from pydantic import EmailStr
 
@@ -29,3 +30,19 @@ class Credentials(BaseModel):
 
 class Token(BaseModel):
     tokenStr : str
+
+class SolarObject(BaseModel):
+    name : Optional[str]
+    sprite : str
+    distance : int
+    period : int
+
+class SolarSystem(BaseModel):
+    name: str
+    position : Tuple[int,int]
+    governement: str
+    links: Optional[List[str]]
+    objects : List[SolarObject]
+
+class Map(BaseModel):
+    SolarSystems : List[SolarSystem]

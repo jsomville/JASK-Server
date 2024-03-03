@@ -43,17 +43,24 @@ def get_token(db: Session, token: str):
 
 
 def remove_token(db: Session, token: str):
-    todo = db.query(models.Token).filter(models.Token.token== token).first() # Todo object
-    db.delete(todo)
+    db_token = db.query(models.Token).filter(models.Token.token== token).first() # Todo object
+    db.delete(db_token)
     db.commit()
 
-def create_token(db: Session, token: str, email):
+def remove_token_by_email(db: Session, email: str):
+    db_token = db.query(models.Token).filter(models.Token.email== email).first() # Todo object
+    if db_token:
+        db.delete(db_token)
+        db.commit()
+
+def create_token(db: Session, token: str, email: str, expiry):
     expiry = datetime.now() + timedelta(hours = 24)
     db_token = models.Token(token = token, email = email, expiry = expiry )
-    db.add(db_token)
-    db.commit()
+    if db_token:
+        db.add(db_token)
+        db.commit()
 
-    return db.query(models.User).filter(models.Token.token == token).first()
+    return db.query(models.Token).filter(models.Token.token == token).first()
 
 def create_activateKey(db: Session, key: str, email):
     expiry = datetime.now() + timedelta(hours = 1)
