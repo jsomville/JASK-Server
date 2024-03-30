@@ -2,6 +2,7 @@
   "SolarSystems": [
     {
       "name": "Sol",
+      "type":"G",
       "position": [
         -400,
         100
@@ -74,6 +75,7 @@
     },
     {
       "name": "Alpha Centauri",
+      "type":"G",
       "position": [
         -429,
         125
@@ -123,6 +125,7 @@
     },
     {
       "name": "Altair",
+      "type":"G",
       "position": [
         -357,
         161
@@ -173,6 +176,7 @@
     },
     {
       "name": "Caph",
+      "type":"G",
       "position": [
         -295,
         77
@@ -222,6 +226,7 @@
     },
     {
       "name": "Denebola",
+      "type":"K",
       "position": [
         -478,
         70
@@ -271,6 +276,7 @@
     },
     {
       "name": "Sirius",
+      "type":"F",
       "position": [
         -378,
         44
@@ -320,6 +326,7 @@
     },
     {
       "name": "Vega",
+      "type":"G",
       "position": [
         -402,
         182
