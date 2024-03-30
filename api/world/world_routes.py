@@ -1,4 +1,7 @@
+import json
 from fastapi import APIRouter
+
+from api import schemas
 
 router = APIRouter(
     prefix="/world",
@@ -38,12 +41,22 @@ async def warp_to():
 
     return [{"Message": "Warp to"}]
 
+#@router.get("/solarsystems/", response_model=list[schemas.SolarSystem])
 @router.get("/solarsystems/")
 async def get_solar_systems():
 
     #Verify Token
 
+    import os
+    print(os.getcwd())
+
     #Get SS List
+    file_name = "./data/map.json"
+    with open(file_name) as f:
+        file_data = json.load(f)
+        map_data = schemas.Map(**file_data)
+
+        return map_data
 
     #Return SS List
 

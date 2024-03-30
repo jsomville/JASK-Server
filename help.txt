@@ -1,0 +1,6 @@
+Virtual env
+Create : -m venv name
+Activate source /venv/bin/activate
+Install from text file : pip install -r requirement.txt
+
+startServer: uvicorn main:app --reload
